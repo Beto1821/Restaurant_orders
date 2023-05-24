@@ -26,6 +26,20 @@ class MenuBuilder:
 
     # Req 4
     def get_main_menu(self, restriction=None) -> pd.DataFrame:
+        """
+        Retorna o cardápio principal com base em uma restrição alimentar,
+        se especificada.
+
+        Args:
+            restriction (str):
+            Restrição alimentar a ser considerada no cardápio.
+            Se não for especificada, retorna o cardápio completo.
+
+        Returns:
+            pd.DataFrame: 
+            DataFrame contendo as informações do cardápio, incluindo as colunas
+            'dish_name', 'ingredients', 'price' e 'restrictions'.
+        """
         if restriction:
             filtered_dishes = [
                 dish
@@ -50,7 +64,7 @@ class MenuBuilder:
             "dish_name": dish_names,
             "ingredients": ingredients,
             "price": prices,
-            "restrictions": restrictions
+            "restrictions": restrictions,
         }
 
         return pd.DataFrame(menu_data)
