@@ -36,7 +36,7 @@ class MenuBuilder:
             Se não for especificada, retorna o cardápio completo.
 
         Returns:
-            pd.DataFrame: 
+            pd.DataFrame:
             DataFrame contendo as informações do cardápio, incluindo as colunas
             'dish_name', 'ingredients', 'price' e 'restrictions'.
         """
