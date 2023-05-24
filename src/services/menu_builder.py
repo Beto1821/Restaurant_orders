@@ -30,7 +30,7 @@ class MenuBuilder:
             filtered_dishes = [
                 dish
                 for dish in self.menu_data.dishes
-                if restriction not in dish.restrictions
+                if restriction not in dish.get_restrictions()
             ]
         else:
             filtered_dishes = self.menu_data.dishes
@@ -42,9 +42,9 @@ class MenuBuilder:
 
         for dish in filtered_dishes:
             dish_names.append(dish.name)
-            ingredients.append(", ".join(dish.recipe.keys()))
+            ingredients.append(dish.get_ingredients())
             prices.append(dish.price)
-            restrictions.append(", ".join(dish.restrictions))
+            restrictions.append(dish.get_restrictions())
 
         menu_data = {
             "dish_name": dish_names,
